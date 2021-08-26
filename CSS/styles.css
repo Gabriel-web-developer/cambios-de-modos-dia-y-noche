@@ -1,0 +1,107 @@
+/*---------- Estilos Generales ----------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--color-body);
+    transition: background-color ease-in-out 0.5s;
+}
+
+/*--- Variables ---*/
+
+:root {
+    --color-body: #e9e9e9;
+    --color-card: #fff;
+    --color-title: #141414;
+    --linear-gradient: linear-gradient(40deg, #8dcef8, #7973ee 70%);
+    --box-shadow: 0 4px 35px rgba(0,0,0,0.4);
+}
+
+.dark {
+    --color-body: #141414;
+    --color-card: #1a1a1a;
+    --color-title: #fff;
+    --linear-gradient: linear-gradient(40deg, #f33434, #ff8c00 70%);
+    --box-shadow: 0 4px 15px rgba(48,48,48,0.4);
+}
+
+/*--- Main ---*/
+
+.main {
+    width: 100vw;
+    height: 100vh;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    font-family: Verdana;
+}
+
+/*--- Card ---*/
+
+.card {
+    width: 330px;
+    height: 330px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    background: var(--color-card);
+    box-shadow: var(--box-shadow);
+}
+
+.content {
+    text-align: center;
+}
+
+.card__title {
+    color: var(--color-title);
+    font-size: 1.8rem;
+    margin: 3rem 0;
+}
+
+.card__title::after {
+    content: " Light";
+}
+
+/*--- switch ---*/
+
+.switch {
+    width: 100px;
+    height: 50px;
+    margin: 0 auto;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 4px 35px rgba(0,0,0,0.3);
+    background: var(--linear-gradient);
+}
+
+.switch::after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 0.5rem;
+    border-radius: 50px;
+    background: #fff;
+    transition: transform ease-in-out 0.4s;
+}
+
+/*--- Clases Extras ---*/
+
+.dark .card__title::after {
+    content: " Dark";
+}
+
+.dark .switch::after {
+    transform: translateX(45px);
+}
